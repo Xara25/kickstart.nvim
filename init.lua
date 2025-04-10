@@ -455,6 +455,11 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sn', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
       end, { desc = '[S]earch [N]eovim files' })
+
+      -- Shortcut for searching Algorithms folder
+      vim.keymap.set('n', '<leader>sa', function()
+        builtin.find_files { cwd = vim.fn.stdpath 'config' .. '/algos' }
+      end, { desc = '[S]earch [A]lgorithms folder' })
     end,
   },
 
@@ -1000,7 +1005,7 @@ require('lazy').setup({
   --    This is the easiest way to modularize your config.
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
   --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!
