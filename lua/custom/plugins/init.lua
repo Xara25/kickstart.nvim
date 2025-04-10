@@ -2,16 +2,17 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
+
 return {
   {
     'nvim-flutter/flutter-tools.nvim',
-    lazy = false,
+    lazy = false, -- ensures it loads on startup
     dependencies = {
       'nvim-lua/plenary.nvim',
-      'stevearc/dressing.nvim', -- optional, used for vim.ui.select
+      'stevearc/dressing.nvim', -- optional UI for vim.ui.select
     },
     config = function()
-      require('flutter-tools').setup {} -- you can customize this later
+      require('flutter-tools').setup {} -- minimal config, uses defaults
     end,
   },
 }
